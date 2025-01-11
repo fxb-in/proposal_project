@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-IN" dir="ltr">
+  <head>
+    <title>Do you wanna go out with me?</title>
+    <meta charset="utf-8">
+    <meta name="author" content="SidPro"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta name="description" content="Do you wanna go out with me? A website to invite your lover for a date."/>
+    <meta name="keywords" content="Date invite, proposal page, programming project"/>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="ask" class="container">
+      <h1 class="header_text">nammalk porath poyalo?</h1>
+      <div class="photo_container">
+        <!-- Replace this with the path to your first photo -->
+        <img src="image/your_pic1.jpg" alt="Your smiling photo" class="photo">
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">pogalo </button>
+        <button class="btn" id="noButton" onmouseover="moveButton()">patoola </button>
+      </div>
+    </div>
+    <div id="ans" class="container" style="display: none;">
+      <h1 class="header_text">nammalk pogalo bengali patti . hehe </h1>
+      <div class="photo_container">
+        <!-- Replace this with the path to your second photo -->
+        <img src="image/yourpic_2.jpg" alt="Celebratory photo" class="photo">
+      </div>
+    </div>
+
+    <script>
+      function nextPage() {
+        document.getElementById('ans').style.display = 'block';
+        document.getElementById('ask').style.display = 'none';
+      }
+
+      function moveButton() {
+        const noButton = document.getElementById('noButton');
+        const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${x}px`;
+        noButton.style.top = `${y}px`;
+      }
+    </script>
+  </body>
+</html>
+
